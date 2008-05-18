@@ -111,8 +111,13 @@ p {
 .number_of_comments {
   font-size: 0.5em; }
 
+.rumors {
+  display: inline;
+  width: 400px; }
+
 .create_your_rumor_now {
   margin-top: 14px;
   padding-bottom: 7px;
-  width: 500px;
+  margin-left: 410px;
+  width: 400px;
   background: url('/images/blue_gradient.png') repeat-x; }

@@ -1,9 +1,10 @@
-%h1 Last Rumors
-
-- @rumors.each do |rumor|
-  = partial :rumor, {:rumor => rumor}
-
 .create_your_rumor_now
   %h2 Create your new rumor now!
   %p Share your rumor with your friends and start the search of the truth.
   %p= link_to 'New', url(:new_rumor)
+
+.rumors
+  %h1 Last Rumors
+
+  - @rumors.each do |rumor|
+    = partial :rumor, {:rumor => rumor}

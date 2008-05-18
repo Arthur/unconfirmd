@@ -4,5 +4,9 @@ module Merb
     def link_to(name, url)
       tag(:a, name, :href => url)
     end
+    
+    def image(filename)
+      tag(:img, nil, :src => "/images/"+filename)
+    end
   end
 end
