@@ -40,15 +40,29 @@ class Rumor
   end
 
   def score
+    return "" if self.defavorable == 0 && self.favorable == 0
+    
     score = ""
     if self.favorable >= self.defavorable
-      score = (self.favorable.to_f / self.defavorable.to_f * 100).to_s
+      if self.defavorable == 0
+        score = 100.to_s
+      else
+        score = (self.favorable.to_f / count_vote * 100).round.to_s
+      end
       score << "% agree"
     else
-      score = (self.defavorable.to_f / self.favorable.to_f * 100).to_s
+      if self.favorable == 0
+        score = 100.to_s
+      else
+        score = (self.defavorable.to_f / count_vote * 100).round.to_s
+      end
       score << "% disagree"
     end
     score
+  end
+
+  def count_vote
+    self.favorable + self.defavorable
   end
 
   def populars
