@@ -83,7 +83,7 @@ h1#logo {
   font-size: 2em;
   line-height: 75px;
   width: 386px;
-  height: 49px;
+  height: 80px;
   margin-left: auto;
   margin-right: auto; }
   h1#logo span {
@@ -113,6 +113,6 @@ p {
 
 .create_your_rumor_now {
   margin-top: 14px;
-  padding-bottom: 14px;
+  padding-bottom: 7px;
   width: 500px;
   background: url('/images/blue_gradient.png') repeat-x; }
