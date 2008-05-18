@@ -1,0 +1,18 @@
+<h1>Rumors controller, index action</h1>
+
+<p>Edit this file in <tt>app/views/rumors/index.html.erb</tt></p>
+
+<table>
+  <tr>
+  </tr>
+
+<% for rumor in @rumors %>
+  <tr>
+    <td><%= link_to 'Show', url(:rumor, rumor) %></td>
+    <td><%= link_to 'Edit', url(:edit_rumor,  rumor) %></td>
+    <td><%= delete_button :rumor, rumor %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'New', url(:new_rumor) %>
