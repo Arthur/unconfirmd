@@ -1,2 +1,5 @@
 %h2.rumor
   = link_to rumor.title, url(:rumor, rumor)
+  %span.number_of_comments
+    = rumor.comments.size
+    = rumor.comments.size == 1 ? 'comment' : 'comments'

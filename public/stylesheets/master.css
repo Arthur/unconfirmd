@@ -95,7 +95,7 @@ h1#logo {
     top: 0;
     width: 100%; }
 
-p {
+p, ul {
   margin-left: 7px; }
 
 .line {
@@ -104,3 +104,6 @@ p {
   font-size: 0;
   line-height: 0;
   background: #f23d0c; }
+
+.number_of_comments {
+  font-size: 0.5em; }
