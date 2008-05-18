@@ -1,6 +1,7 @@
 class Rumors < Application
   # provides :xml, :yaml, :js
-
+  provides :js
+  
   def index
     @rumors = Rumor.all
     display @rumors
@@ -62,7 +63,11 @@ class Rumors < Application
     @rumor = Rumor.get(params[:id])
     @rumor.plus
     if  @rumor.save
-      redirect url(:rumor, @rumor)
+      if params[:format]=='js'
+        render
+      else
+        redirect url(:rumor, @rumor)
+      end
     else
       raise BadRequest
     end
@@ -72,7 +77,11 @@ class Rumors < Application
     @rumor = Rumor.get(params[:id])
     @rumor.minus
     if  @rumor.save
-      redirect url(:rumor, @rumor)
+      if params[:format]=='js'
+        render
+      else
+        redirect url(:rumor, @rumor)
+      end
     else
       raise BadRequest
     end

@@ -1,8 +1,9 @@
-%h2.rumor
+%h2.rumor{:id => "rumor_#{rumor.id}"}
   = link_to rumor.title, url(:rumor, rumor)
   %span.score=h rumor.score
-  = link_to image('plus.png'), url(:plus_rumor, rumor)
-  = link_to image('minus.png'), url(:minus_rumor, rumor)
+
+  = link_to image('plus.png'), url(:plus_rumor, rumor), :class => 'ajax_link'
+  = link_to image('minus.png'), url(:minus_rumor, rumor), :class => 'ajax_link'
   
 .number_of_comments
   = rumor.comments.size

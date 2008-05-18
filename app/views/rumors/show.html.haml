@@ -11,6 +11,9 @@
     by
     = "[#{@rumor.author}]"
 
+= link_to '[+]', url(:plus_rumor, @rumor)
+= link_to '[-]', url(:minus_rumor, @rumor)
+    
 %h2 Comments
 
 %ul
