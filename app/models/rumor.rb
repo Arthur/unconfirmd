@@ -3,7 +3,8 @@ require 'digest/md5'
 class Rumor
   include DataMapper::Resource
 
-  # before :create, :create_hash
+  # WTF with DataMapper, how to write a before :create ??
+  before :save, :create_hash
 
   property :id, Integer, :serial => true
   property :title, String
@@ -29,7 +30,7 @@ class Rumor
   end
   
   def create_hash
-    hash = Digest::MD5.hexdigest(created_at.to_s + title)
+    hash = Digest::MD5.hexdigest(created_at.to_s + title) unless hash
   end
 
 end
