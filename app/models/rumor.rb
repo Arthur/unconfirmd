@@ -24,7 +24,7 @@ class Rumor
   end
   
   def minus
-    self.defavorable -= 1
+    self.defavorable += 1
   end
   
   def create_hash
