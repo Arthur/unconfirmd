@@ -1,19 +1,30 @@
 %h1
   = link_to "Last Rumors", '/'
-  \/
-  = h @rumor.title
 
+%h1
+  Rumor:
+  = h @rumor.title
+  #score= @rumor.score
+  
 - unless @rumor.author.blank?
   %p
     by
     = "[#{@rumor.author}]"
 
+%h2 Comments
+
 %ul
   - @rumor.comments.each do |comment|
     %li= h comment.content
   
+%p &nbsp;
+
+%h2 Create a new comment
 
 - form_for(@comment, :action => url(:rumor_comments, :rumor_id => @rumor.id) ) do |f|
   %p= text_control :content, :label => 'Comment'
   %p= text_control :author, :label => 'author'
-  %p= submit_button "Ok"
+  %p
+    = submit_button "Submit"
+    or
+    = link_to 'Cancel', '/'

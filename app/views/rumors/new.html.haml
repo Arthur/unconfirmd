@@ -1,0 +1,14 @@
+%h1
+  = link_to "Last Rumor", '/'
+  \/
+  New
+
+= error_messages_for :rumor
+
+- form_for(@rumor, :action => url(:rumors) ) do |f|
+  %p= text_control :title, :label => 'Rumor'
+  %p= text_control :author, :label => 'Author'
+  %p
+    = submit_button "Create"
+    or
+    = link_to 'Cancel', '/'
