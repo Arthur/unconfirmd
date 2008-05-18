@@ -8,6 +8,8 @@ class Rumors < Application
 
   def show
     @rumor = Rumor.get(params[:id])
+    @comment = Comment.new 
+    @comment.rumor = @rumor
     raise NotFound unless @rumor
     display @rumor
   end

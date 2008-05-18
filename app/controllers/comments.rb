@@ -1,58 +1,41 @@
 class Comments < Application
   # provides :xml, :yaml, :js
-
+  before :find_rumor
+  
   def index
     @comments = Comment.all
     display @comments
   end
 
-  def show
-    @comment = Comment.get()
-    raise NotFound unless @comment
-    display @comment
-  end
-
   def new
     only_provides :html
     @comment = Comment.new
+    @comment.rumor = @rumor
     render
   end
 
   def edit
     only_provides :html
     @comment = Comment.get()
+    @comment.rumor = @rumor
     raise NotFound unless @comment
     render
   end
 
   def create
     @comment = Comment.new(params[:comment])
+    @comment.rumor = @rumor
+    
     if @comment.save
-      redirect url(:comment, @comment)
+      redirect url(:rumor, @rumor)
     else
       render :new
     end
   end
 
-  def update
-    @comment = Comment.get()
-    raise NotFound unless @comment
-    @comment.attributes = params[:comment]
-    if  @comment.save
-      redirect url(:comment, @comment)
-    else
-      raise BadRequest
-    end
+  protected
+  def find_rumor
+    @rumor = Rumor.get(params[:rumor_id])
   end
-
-  def destroy
-    @comment = Comment.get()
-    raise NotFound unless @comment
-    if @comment.destroy
-      redirect url(:comment)
-    else
-      raise BadRequest
-    end
-  end
-
+  
 end
