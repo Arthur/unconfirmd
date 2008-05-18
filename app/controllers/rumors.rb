@@ -57,4 +57,24 @@ class Rumors < Application
     end
   end
 
+  def plus
+    @rumor = Rumor.get(params[:id])
+    @rumor.plus
+    if  @rumor.save
+      redirect url(:rumor, @rumor)
+    else
+      raise BadRequest
+    end
+  end
+  
+  def minus
+    @rumor = Rumor.get(params[:id])
+    @rumor.minus
+    if  @rumor.save
+      redirect url(:rumor, @rumor)
+    else
+      raise BadRequest
+    end
+  end
+
 end
