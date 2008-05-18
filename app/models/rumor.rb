@@ -63,7 +63,7 @@ class Rumor
   def self.populars
     rumors = Rumor.all
     rumors.sort do |r1, r2|
-      r2.comments.size <=> r1.comments.size
+      (r2.comments.size*3 + r2.count_vote) <=> (r1.comments.size*3 + r1.count_vote)
     end
   end
 
