@@ -1,4 +1,4 @@
-%h2.rumor{:id => "rumor_#{rumor.id}"}
+%h2.rumor{:class => "rumor_#{rumor.id}"}
   = link_to rumor.title, url(:rumor, rumor)
   %span.score=h rumor.score
 
