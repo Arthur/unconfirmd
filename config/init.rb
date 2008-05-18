@@ -155,3 +155,5 @@ end
 # And the result is:
 # irb> "wife".plural
 # => wives
+
+require 'digest/md5'
