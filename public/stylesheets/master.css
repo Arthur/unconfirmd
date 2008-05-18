@@ -98,6 +98,9 @@ h1#logo {
 p, ul {
   margin-left: 7px; }
 
+p {
+  margin-bottom: 7px; }
+
 .line {
   margin-top: 21px;
   height: 7px;
@@ -107,3 +110,9 @@ p, ul {
 
 .number_of_comments {
   font-size: 0.5em; }
+
+.create_your_rumor_now {
+  margin-top: 14px;
+  padding-bottom: 14px;
+  width: 500px;
+  background: url('/images/blue_gradient.png') repeat-x; }
