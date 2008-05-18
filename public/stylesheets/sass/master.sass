@@ -8,6 +8,12 @@
 !bigger_font_size =   1.4em
 !big_font_size =      1.6em
 
+!orange =             #F23D0C
+!white =              #FFFFFF
+!light_grey =         #D9E8F5
+!light_blue =         #91BED4
+!blue =               #304269
+
 body
   :font-family        "lucida grande",tahoma,verdana,arial,sans-serif
   :font-size          62.5%
@@ -16,3 +22,25 @@ body
 
 .master_container
   :font-size          1.2em
+
+#header  
+  :margin-top =       !margin * 2
+  :text-align         center
+h1#logo
+  :overflow           hidden
+  :position           relative
+  :font-size =        !big_font_size
+  :line-height        75px
+  :width              386px
+  :height             52px
+  :margin-left        auto
+  :margin-right       auto
+
+  span
+    :background       url(/images/logo.png) no-repeat
+    :display          block
+    :height           100%
+    :left             0
+    :position         absolute
+    :top              0
+    :width            100%
