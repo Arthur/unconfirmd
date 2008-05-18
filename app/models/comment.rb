@@ -3,6 +3,8 @@ class Comment
 
   property :id, Integer, :serial => true
   property :content, Text
+  property :author, String
+  
 
   many_to_one :rumor
 end
