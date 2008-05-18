@@ -15,4 +15,5 @@
 
 - form_for(@comment, :action => url(:rumor_comments, :rumor_id => @rumor.id) ) do |f|
   %p= text_control :content, :label => 'Comment'
+  %p= text_control :author, :label => 'author'
   %p= submit_button "Ok"

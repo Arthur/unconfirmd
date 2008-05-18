@@ -8,7 +8,7 @@ class Rumors < Application
 
   def show
     @rumor = Rumor.get(params[:id])
-    @comment = Comment.new 
+    @comment = Comment.new(:author => author)
     @comment.rumor = @rumor
     raise NotFound unless @rumor
     display @rumor
@@ -16,7 +16,7 @@ class Rumors < Application
 
   def new
     only_provides :html
-    @rumor = Rumor.new
+    @rumor = Rumor.new(:author => author)
     render
   end
 
@@ -29,6 +29,7 @@ class Rumors < Application
 
   def create
     @rumor = Rumor.new(params[:rumor])
+    self.author = @rumor.author
     if @rumor.save
       redirect url(:rumor, @rumor)
     else

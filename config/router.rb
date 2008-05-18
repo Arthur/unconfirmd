@@ -25,6 +25,9 @@ Merb::Router.prepare do |r|
   r.resources :rumors do |rumor|
     rumor.resources :comments
   end
+  
+  r.match('/rumors/:id/plus').to(:controller => 'rumors', :action => 'plus').name(:plus_rumor)
+  r.match('/rumors/:id/minus').to(:controller => 'rumors', :action => 'minus').name(:minus_rumor)
 
   # This is the default route for /:controller/:action/:id
   # This is fine for most cases.  If you're heavily using resource-based

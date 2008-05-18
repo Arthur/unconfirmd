@@ -25,6 +25,7 @@ class Comments < Application
   def create
     @comment = Comment.new(params[:comment])
     @comment.rumor = @rumor
+    self.author = @comment.author
     
     if @comment.save
       redirect url(:rumor, @rumor)
