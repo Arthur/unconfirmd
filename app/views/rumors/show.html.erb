@@ -6,6 +6,14 @@
   <% @rumor.comments.each do |comment| %>
   <li><%= h comment.content %></li>
   <% end %>
+  <li>
+    <% form_for(@comment, :action => url(:rumor_comments, :rumor_id => @rumor.id) ) do |f| %>
+      <p>
+        <%= text_control :content, :label => 'New Comment :' %>
+        <%= submit_button "Ok" %>
+      </p>
+    <% end %>
+  </li>
 </ul>
 
 <%= link_to 'Back', url(:rumors) %>
