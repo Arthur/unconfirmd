@@ -60,6 +60,11 @@ body {
 .master_container {
   font-size: 1.2em; }
 
+.container {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto; }
+
 #header {
   margin-top: 21px;
   text-align: center; }
@@ -113,11 +118,12 @@ p {
 
 .rumors {
   display: inline;
+  float: left;
   width: 400px; }
 
 .create_your_rumor_now {
   margin-top: 14px;
   padding-bottom: 7px;
-  margin-left: 410px;
+  margin-left: 400px;
   width: 400px;
   background: url('/images/blue_gradient.png') repeat-x; }
