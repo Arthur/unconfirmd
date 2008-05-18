@@ -9,3 +9,10 @@
   %p Share your rumor with your friends and start the search of the truth.
   %p= link_to 'New', url(:new_rumor)
 
+%div{:style => "clear: both"} &nbsp;
+
+.rumors
+  %h1 Popular Rumors
+
+  - Rumor.populars.each do |rumor|
+    = partial :rumor, {:rumor => rumor}

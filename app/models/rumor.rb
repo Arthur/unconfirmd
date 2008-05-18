@@ -60,7 +60,7 @@ class Rumor
     self.favorable + self.defavorable
   end
 
-  def populars
+  def self.populars
     rumors = Rumor.all
     rumors.sort do |r1, r2|
       r2.comments.size <=> r1.comments.size
