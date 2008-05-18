@@ -1,7 +1,11 @@
-<h1>Rumors controller, show action</h1>
 
-<p>Edit this file in <tt>app/views/rumors/show.html.erb</tt></p>
+<%= h @rumor.title %> 
+<% unless @rumor.author.blank? %>by [<%= @rumor.author %>]<% end %>
 
+<ul>
+  <% @rumor.comments.each do |comment| %>
+  <li><%= h comment.content %></li>
+  <% end %>
+</ul>
 
-<%= link_to 'Edit',  url(:edit_rumor,  @rumor) %> |
 <%= link_to 'Back', url(:rumors) %>

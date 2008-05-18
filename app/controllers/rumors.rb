@@ -7,7 +7,7 @@ class Rumors < Application
   end
 
   def show
-    @rumor = Rumor.get()
+    @rumor = Rumor.get(params[:id])
     raise NotFound unless @rumor
     display @rumor
   end
@@ -20,7 +20,7 @@ class Rumors < Application
 
   def edit
     only_provides :html
-    @rumor = Rumor.get()
+    @rumor = Rumor.get(params[:id])
     raise NotFound unless @rumor
     render
   end
@@ -35,7 +35,7 @@ class Rumors < Application
   end
 
   def update
-    @rumor = Rumor.get()
+    @rumor = Rumor.get(params[:id])
     raise NotFound unless @rumor
     @rumor.attributes = params[:rumor]
     if  @rumor.save
@@ -46,7 +46,7 @@ class Rumors < Application
   end
 
   def destroy
-    @rumor = Rumor.get()
+    @rumor = Rumor.get(params[:id])
     raise NotFound unless @rumor
     if @rumor.destroy
       redirect url(:rumor)

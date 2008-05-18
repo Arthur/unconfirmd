@@ -6,6 +6,9 @@
 
 <% form_for(@rumor, :action => url(:rumors) ) do |f| %>
   <p>
+    <%= text_control :title, :label => 'Rumor' %>
+    <%= text_control :author, :label => 'Author' %>
+    
     <%= submit_button "Create" %>
   </p>
 <% end %>
