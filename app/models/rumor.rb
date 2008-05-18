@@ -1,7 +1,7 @@
 class Rumor
   include DataMapper::Resource
 
-  property :id, Integer, :key => true
+  property :id, Integer, :serial => true
   property :title, String
   property :author, String
   property :private, TrueClass
