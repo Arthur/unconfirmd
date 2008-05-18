@@ -6,7 +6,8 @@
 !small_font_size =    0.833em
 !base_font_size =     1em
 !bigger_font_size =   1.4em
-!big_font_size =      1.6em
+!big_font_size =      2em
+!biggest_font_size =  3em
 
 !orange =             #F23D0C
 !white =              #FFFFFF
@@ -24,8 +25,23 @@ body
   :font-size          1.2em
 
 #header  
-  :margin-top =       !margin * 2
+  :margin-top =       !margin * 3
   :text-align         center
+
+h1, h2, h3
+  :margin-bottom =    !margin
+  :margin-left =      !margin
+
+h1
+  :font-size =        !biggest_font_size
+
+h2
+  :font-size =        !big_font_size
+
+h3
+  :font-size =        !bigger_font_size
+  
+
 h1#logo
   :overflow           hidden
   :position           relative
@@ -44,3 +60,13 @@ h1#logo
     :position         absolute
     :top              0
     :width            100%
+
+p
+  :margin-left =      !margin
+
+.line
+  :margin-top =       !margin * 3
+  :height =           !margin
+  :font-size          0
+  :line-height        0
+  :background =       !orange
