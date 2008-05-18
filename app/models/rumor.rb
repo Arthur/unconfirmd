@@ -5,8 +5,8 @@ class Rumor
   property :title, String
   property :author, String
   property :private, TrueClass
-  property :favorable, Integer
-  property :defavorable, Integer
+  property :favorable, Integer, :default => 0
+  property :defavorable, Integer, :default => 0
   property :hash, String
   property :created_at, DateTime
   property :updated_at, DateTime  
