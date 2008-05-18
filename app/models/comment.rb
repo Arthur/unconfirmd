@@ -4,5 +4,5 @@ class Comment
   property :id, Integer, :serial => true
   property :content, Text
 
-  has 1, :rumor, :class_name => "Rumor"
+  many_to_one :rumor
 end
