@@ -1,6 +1,6 @@
 %h2.rumor
   = link_to rumor.title, url(:rumor, rumor)
-  =h rumor.score
+  %span.score=h rumor.score
   = link_to image('plus.png'), url(:plus_rumor, rumor)
   = link_to image('minus.png'), url(:minus_rumor, rumor)
   

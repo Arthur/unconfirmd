@@ -4,7 +4,7 @@
 %h1
   Rumor:
   = h @rumor.title
-  #score= @rumor.score
+  = @rumor.score
   
 - unless @rumor.author.blank?
   %p
