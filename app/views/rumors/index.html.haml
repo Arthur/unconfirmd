@@ -2,3 +2,5 @@
 
 - @rumors.each do |rumor|
   = partial :rumor, {:rumor => rumor}
+
+= link_to 'New', url(:new_rumor)
