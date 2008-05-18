@@ -12,4 +12,5 @@ class Rumor
   property :updated_at, DateTime  
 
   has 1, :parent, :class_name => "Rumor"
+  has n, :comments, :class_name => "Comment"
 end
