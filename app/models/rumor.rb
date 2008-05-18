@@ -1,4 +1,4 @@
-require 'digest/md5'
+require 'uuidtools'
 
 class Rumor
   include DataMapper::Resource
@@ -20,17 +20,15 @@ class Rumor
   has n, :comments, :class_name => "Comment"
   
   def plus
-    favorable += 1
-    save
+    self.favorable += 1
   end
   
   def minus
-    defavorable -= 1
-    save
+    self.defavorable -= 1
   end
   
   def create_hash
-    hash = Digest::MD5.hexdigest(created_at.to_s + title) unless hash
+    self.hash = UUID.random_create.to_i unless hash
   end
 
 end
